@@ -485,6 +485,8 @@
 
 .wi-global-world-selector {
     margin-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
     background: var(--SmartThemeBlurTintColor, #1a1a1a);
     border: 1px solid var(--SmartThemeBorderColor, #444);
     border-radius: 8px;
