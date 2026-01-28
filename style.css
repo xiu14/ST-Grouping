@@ -307,37 +307,59 @@
     border-left-color: #3b82f6;
 }
 
-/* 修复分组内条目的显示问题 - 移除遮罩层 */
+/* ============================================ */
+/* 修复分组内条目的显示问题                      */
+/* 问题：主题shadow_color(黄色)覆盖在条目上      */
+/* ============================================ */
+
+/* 强制重置分组内条目的所有可能导致黄色遮罩的样式 */
 .wi-group-content .world_entry {
-    /* 确保条目不被遮罩覆盖 */
     position: relative;
     z-index: 1;
+    /* 强制覆盖主题的shadow_color影响 */
+    box-shadow: none !important;
+    /* 使用深色背景 */
+    background-color: #282a2d !important;
+    background: #282a2d !important;
+    /* 移除任何可能的滤镜或混合模式 */
+    filter: none !important;
+    mix-blend-mode: normal !important;
 }
 
-/* 移除可能存在的伪元素遮罩 */
+/* 移除条目的伪元素（可能用于遮罩效果） */
 .wi-group-content .world_entry::before,
 .wi-group-content .world_entry::after {
     display: none !important;
     content: none !important;
-}
-
-/* 修复条目内部所有元素的伪元素遮罩 */
-.wi-group-content .world_entry *::before,
-.wi-group-content .world_entry *::after {
     background: transparent !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
+    box-shadow: none !important;
 }
 
-/* 确保分组内容区域没有遮罩 */
+/* 修复分组内容区域 */
 .wi-group-content {
     position: relative;
     z-index: 1;
+    /* 确保分组内容区域没有黄色遮罩 */
+    box-shadow: none !important;
+    background: transparent !important;
 }
 
 .wi-group-content::before,
 .wi-group-content::after {
     display: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* 确保分组容器也没有遮罩 */
+.wi-group-container {
+    box-shadow: none !important;
+}
+
+.wi-group-container::before,
+.wi-group-container::after {
+    display: none !important;
+    background: transparent !important;
 }
 
 /* 未分组标题 */
