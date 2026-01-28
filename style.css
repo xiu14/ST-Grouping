@@ -753,3 +753,12 @@
         justify-content: center;
     }
 }
+
+/* 移动端预先隐藏原生select2框，防止闪烁 */
+@media (max-width: 1000px) {
+
+    /* 隐藏全局世界书的原生select2选择器 */
+    #WIMultiSelector .range-block-range {
+        display: none !important;
+    }
+}
