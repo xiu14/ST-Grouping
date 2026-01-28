@@ -199,7 +199,7 @@
 /* 分组容器 */
 .wi-group-container {
     margin-bottom: 8px;
-    background: var(--SmartThemeShadowColor, rgba(0,0,0,0.15));
+    background: var(--SmartThemeShadowColor, rgba(0, 0, 0, 0.15));
     border-radius: 6px;
     overflow: hidden;
 }
@@ -251,14 +251,14 @@
     padding: 4px 12px 8px;
     font-size: 11px;
     color: var(--grey60, #666);
-    background: var(--SmartThemeShadowColor, rgba(0,0,0,0.1));
+    background: var(--SmartThemeShadowColor, rgba(0, 0, 0, 0.1));
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     display: none;
 }
 
-.wi-group-header.collapsed + .wi-group-preview {
+.wi-group-header.collapsed+.wi-group-preview {
     display: block;
 }
 
@@ -280,7 +280,7 @@
 /* 分组内容区域 */
 .wi-group-content {
     padding: 5px;
-    background: var(--SmartThemeChatTintColor, rgba(0,0,0,0.05));
+    background: transparent;
 }
 
 .wi-group-content.collapsed {
@@ -291,14 +291,14 @@
 .wi-group-content .world_entry {
     margin: 4px 0;
     border-radius: 4px;
-    /* 左侧边缘颜色：默认蓝色（非constant），constant状态为绿色 */
-    border-left: 3px solid #3b82f6;
+    /* 左侧边缘颜色：默认绿色（非constant），constant状态为蓝色 */
+    border-left: 3px solid #10b981;
     transition: border-left-color 0.2s;
 }
 
-/* constant状态的条目使用绿色边缘 */
+/* constant状态的条目使用蓝色边缘 */
 .wi-group-content .world_entry[data-wi-constant="true"] {
-    border-left-color: #10b981;
+    border-left-color: #3b82f6;
 }
 
 /* 未分组标题 */
@@ -344,7 +344,7 @@
     min-width: 400px;
 }
 
-.wi-group-edit-popup > div {
+.wi-group-edit-popup>div {
     margin-bottom: 15px;
 }
 
@@ -369,7 +369,7 @@
     overflow-y: auto;
     border: 1px solid var(--SmartThemeBorderColor, #444);
     border-radius: 4px;
-    background: var(--SmartThemeShadowColor, rgba(0,0,0,0.2));
+    background: var(--SmartThemeShadowColor, rgba(0, 0, 0, 0.2));
 }
 
 .wi-group-edit-popup .entry-item {
@@ -383,7 +383,7 @@
 }
 
 .wi-group-edit-popup .entry-item:hover {
-    background: var(--SmartThemeShadowColor, rgba(0,0,0,0.3));
+    background: var(--SmartThemeShadowColor, rgba(0, 0, 0, 0.3));
 }
 
 .wi-group-edit-popup .entry-item:last-child {
@@ -417,7 +417,7 @@
     background: var(--SmartThemeBlurTintColor, #1a1a1a);
     border: 1px solid var(--SmartThemeBorderColor, #444);
     border-radius: 6px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     z-index: 10000;
     padding: 4px;
     animation: wiMenuFadeIn 0.15s ease;
@@ -428,6 +428,7 @@
         opacity: 0;
         transform: scale(0.95);
     }
+
     to {
         opacity: 1;
         transform: scale(1);
@@ -455,7 +456,7 @@
 }
 
 .wi-context-menu-item:hover {
-    background: var(--SmartThemeShadowColor, rgba(255,255,255,0.1));
+    background: var(--SmartThemeShadowColor, rgba(255, 255, 255, 0.1));
 }
 
 .wi-context-menu-item.remove {
@@ -551,7 +552,7 @@
 }
 
 .wi-gws-item:hover {
-    background: var(--SmartThemeShadowColor, rgba(255,255,255,0.05));
+    background: var(--SmartThemeShadowColor, rgba(255, 255, 255, 0.05));
 }
 
 .wi-gws-item.selected {
@@ -596,7 +597,7 @@
 }
 
 .wi-gws-btn:hover {
-    background: var(--SmartThemeShadowColor, rgba(255,255,255,0.05));
+    background: var(--SmartThemeShadowColor, rgba(255, 255, 255, 0.05));
 }
 
 .wi-gws-btn:first-child {
@@ -618,11 +619,11 @@
     .wi-group-edit-popup {
         min-width: 100%;
     }
-    
+
     .wi-group-edit-popup .entry-keys {
         display: none;
     }
-    
+
     .wi-groups-toolbar {
         justify-content: center;
     }
