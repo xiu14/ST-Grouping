@@ -307,49 +307,37 @@
     border-left-color: #3b82f6;
 }
 
-/* 修复分组内条目的显示问题 - 确保文字可见 */
+/* 修复分组内条目的显示问题 - 移除遮罩层 */
 .wi-group-content .world_entry {
-    /* 重置可能导致问题的背景/遮罩 */
-    background: var(--SmartThemeBlurTintColor, #1e1e1e) !important;
+    /* 确保条目不被遮罩覆盖 */
+    position: relative;
+    z-index: 1;
 }
 
-/* 确保分组内条目的所有子元素文字可见 */
-.wi-group-content .world_entry * {
-    /* 强制文字颜色可见 */
-    color: inherit;
+/* 移除可能存在的伪元素遮罩 */
+.wi-group-content .world_entry::before,
+.wi-group-content .world_entry::after {
+    display: none !important;
+    content: none !important;
 }
 
-/* 条目标题区域 */
-.wi-group-content .world_entry .world_entry_form_control,
-.wi-group-content .world_entry .world-entry-form-control {
+/* 修复条目内部所有元素的伪元素遮罩 */
+.wi-group-content .world_entry *::before,
+.wi-group-content .world_entry *::after {
     background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
 }
 
-/* 条目输入框和文本区域 */
-.wi-group-content .world_entry input,
-.wi-group-content .world_entry textarea,
-.wi-group-content .world_entry select {
-    background: var(--SmartThemeShadowColor, rgba(0, 0, 0, 0.3)) !important;
-    color: var(--SmartThemeBodyColor, #eee) !important;
+/* 确保分组内容区域没有遮罩 */
+.wi-group-content {
+    position: relative;
+    z-index: 1;
 }
 
-/* 条目中的标签和文本 */
-.wi-group-content .world_entry label,
-.wi-group-content .world_entry span,
-.wi-group-content .world_entry .world_popup_entry_label {
-    color: var(--SmartThemeBodyColor, #ddd) !important;
-}
-
-/* 条目按钮 */
-.wi-group-content .world_entry .menu_button {
-    background: var(--SmartThemeShadowColor, rgba(50, 50, 50, 0.5)) !important;
-    color: var(--SmartThemeBodyColor, #ccc) !important;
-}
-
-/* 条目标题/注释 */
-.wi-group-content .world_entry .wi_comment,
-.wi-group-content .world_entry [data-field="comment"] {
-    color: var(--SmartThemeBodyColor, #fff) !important;
+.wi-group-content::before,
+.wi-group-content::after {
+    display: none !important;
 }
 
 /* 未分组标题 */
