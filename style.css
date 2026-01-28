@@ -370,19 +370,58 @@
     box-shadow: none !important;
 }
 
-/* 确保分组容器也没有遮罩 */
+/* 确保分组容器也没有遮罩 - 不使用SmartThemeShadowColor(米黄色) */
 #world_popup_entries_list .wi-group-container,
-#WorldInfo .wi-group-container {
+#WorldInfo .wi-group-container,
+.wi-group-container {
     box-shadow: none !important;
-    background: var(--SmartThemeShadowColor, rgba(0, 0, 0, 0.15)) !important;
+    /* 直接使用深色，不使用主题变量 */
+    background: rgba(0, 0, 0, 0.15) !important;
+    background-color: rgba(0, 0, 0, 0.15) !important;
 }
 
 #world_popup_entries_list .wi-group-container::before,
 #world_popup_entries_list .wi-group-container::after,
 #WorldInfo .wi-group-container::before,
-#WorldInfo .wi-group-container::after {
+#WorldInfo .wi-group-container::after,
+.wi-group-container::before,
+.wi-group-container::after {
     display: none !important;
     background: transparent !important;
+}
+
+/* 分组标题样式覆盖 - 修复hover时的米黄色 */
+#world_popup_entries_list .wi-group-header,
+#WorldInfo .wi-group-header,
+.wi-group-header {
+    background: #222 !important;
+    background-color: #222 !important;
+    box-shadow: none !important;
+}
+
+#world_popup_entries_list .wi-group-header:hover,
+#WorldInfo .wi-group-header:hover,
+.wi-group-header:hover {
+    background: #333 !important;
+    background-color: #333 !important;
+}
+
+#world_popup_entries_list .wi-group-header::before,
+#world_popup_entries_list .wi-group-header::after,
+#WorldInfo .wi-group-header::before,
+#WorldInfo .wi-group-header::after,
+.wi-group-header::before,
+.wi-group-header::after {
+    display: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* 在分组区域内重定义CSS变量，覆盖主题的米黄色 */
+.wi-group-container,
+.wi-group-content,
+.wi-group-header {
+    --SmartThemeShadowColor: rgba(0, 0, 0, 0.3);
 }
 
 /* 未分组标题 */
