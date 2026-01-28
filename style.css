@@ -1,0 +1,629 @@
+/**
+ * ST-Grouping - 合并样式文件
+ * 
+ * 包含：
+ * 1. 提示词条目分组样式 (peg- 前缀)
+ * 2. 世界书分组管理样式 (wi- 前缀)
+ */
+
+/* ==================== 提示词条目分组样式 ==================== */
+
+/* 分组头部 */
+.peg-group-header {
+    display: flex;
+    align-items: center;
+    background: var(--peg-section-bg, rgba(30, 30, 40, 0.75));
+    border: 1px solid var(--peg-border, rgba(80, 80, 100, 0.5));
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin: 4px 0;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.15s ease;
+}
+
+.peg-group-header:hover {
+    background: var(--peg-section-bg, rgba(40, 40, 55, 0.8));
+}
+
+/* 展开/折叠箭头 */
+.peg-group-toggle {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.peg-group-toggle::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid var(--peg-text, #e0e0e0);
+    transform: translate(-50%, -50%) rotate(0deg);
+    transition: transform 0.2s ease;
+}
+
+.peg-group-header.is-expanded .peg-group-toggle::before {
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.peg-group-header:not(.is-expanded) .peg-group-toggle::before {
+    transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+/* 分组名称 */
+.peg-group-name {
+    flex: 1;
+    font-weight: 500;
+    color: var(--peg-text, #e0e0e0);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* 分组计数 */
+.peg-group-count {
+    font-size: 12px;
+    color: var(--peg-tip, rgba(200, 200, 200, 0.6));
+    margin-left: 8px;
+    flex-shrink: 0;
+}
+
+/* 按钮通用样式 */
+.peg-icon-btn {
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--peg-text, #e0e0e0);
+    opacity: 0.7;
+    transition: opacity 0.15s, background 0.15s;
+}
+
+.peg-icon-btn:hover {
+    opacity: 1;
+    background: var(--peg-bg, rgba(50, 50, 60, 0.5));
+}
+
+/* 一键开关按钮 */
+.peg-toggle-all-btn {
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--peg-text, #e0e0e0);
+    opacity: 0.7;
+    transition: opacity 0.15s, background 0.15s;
+}
+
+.peg-toggle-all-btn:hover {
+    opacity: 1;
+    background: var(--peg-bg, rgba(50, 50, 60, 0.5));
+}
+
+.peg-toggle-all-btn.is-mixed i {
+    opacity: 0.6;
+}
+
+.peg-toggle-all-btn[data-state="off"] i {
+    color: #999;
+}
+
+.peg-toggle-all-btn[data-state="on"] i {
+    color: #4ade80;
+}
+
+/* 编辑按钮 */
+.peg-group-edit-btn {
+    margin-left: 4px;
+}
+
+/* 删除按钮 */
+.peg-group-clear-btn {
+    color: var(--peg-danger, #ef4444);
+}
+
+/* 分组包装器 */
+.peg-group-wrapper {
+    border-left: 2px solid var(--peg-border, rgba(80, 80, 100, 0.5));
+    margin-left: 8px;
+    padding-left: 8px;
+    transition: max-height 0.3s ease, opacity 0.2s ease;
+    overflow: hidden;
+}
+
+.peg-group-wrapper:not(.is-expanded) {
+    display: none;
+}
+
+/* 分组菜单 */
+.peg-menu {
+    font-family: inherit;
+}
+
+.peg-menu .menu-item {
+    font-size: 14px;
+}
+
+/* 输入对话框 */
+.peg-input-dialog {
+    font-family: inherit;
+}
+
+
+
+/* ==================== 世界书分组管理样式 ==================== */
+
+/* 工具栏 */
+.wi-groups-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 5px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--SmartThemeBorderColor, #333);
+    flex-wrap: wrap;
+}
+
+.wi-groups-toolbar .menu_button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.wi-groups-toolbar .menu_button i {
+    font-size: 14px;
+}
+
+/* 分组容器 */
+.wi-group-container {
+    margin-bottom: 8px;
+    background: var(--SmartThemeShadowColor, rgba(0,0,0,0.15));
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+/* 分组头部 */
+.wi-group-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    background: var(--SmartThemeBlurTintColor, #222);
+    cursor: pointer;
+    user-select: none;
+    gap: 8px;
+    border-bottom: 1px solid transparent;
+    transition: background 0.2s;
+}
+
+.wi-group-header:hover {
+    background: var(--SmartThemeShadowColor, #333);
+}
+
+.wi-group-header .expand-icon {
+    transition: transform 0.2s;
+    color: var(--SmartThemeBodyColor, #aaa);
+    font-size: 12px;
+}
+
+.wi-group-header.collapsed .expand-icon {
+    transform: rotate(-90deg);
+}
+
+.wi-group-header .wi-group-name {
+    flex: 1;
+    font-weight: 500;
+    color: var(--SmartThemeBodyColor, #eee);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.wi-group-header .wi-group-count {
+    color: var(--grey50, #888);
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+/* 分组预览 - 折叠时显示的摘要 */
+.wi-group-preview {
+    padding: 4px 12px 8px;
+    font-size: 11px;
+    color: var(--grey60, #666);
+    background: var(--SmartThemeShadowColor, rgba(0,0,0,0.1));
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: none;
+}
+
+.wi-group-header.collapsed + .wi-group-preview {
+    display: block;
+}
+
+/* 分组操作按钮 */
+.wi-group-actions {
+    display: flex;
+    gap: 4px;
+}
+
+.wi-group-actions .menu_button {
+    padding: 4px 8px;
+    min-width: auto;
+}
+
+.wi-group-actions .menu_button i {
+    font-size: 12px;
+}
+
+/* 分组内容区域 */
+.wi-group-content {
+    padding: 5px;
+    background: var(--SmartThemeChatTintColor, rgba(0,0,0,0.05));
+}
+
+.wi-group-content.collapsed {
+    display: none;
+}
+
+/* 分组内的条目样式优化 */
+.wi-group-content .world_entry {
+    margin: 4px 0;
+    border-radius: 4px;
+    /* 左侧边缘颜色：默认蓝色（非constant），constant状态为绿色 */
+    border-left: 3px solid #3b82f6;
+    transition: border-left-color 0.2s;
+}
+
+/* constant状态的条目使用绿色边缘 */
+.wi-group-content .world_entry[data-wi-constant="true"] {
+    border-left-color: #10b981;
+}
+
+/* 未分组标题 */
+.wi-ungrouped-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    margin-top: 15px;
+    color: var(--grey60, #888);
+    font-size: 13px;
+    border-top: 1px dashed var(--SmartThemeBorderColor, #444);
+}
+
+/* 拖拽把手 */
+.wi-group-drag-handle {
+    cursor: grab;
+    color: var(--grey50, #666);
+    padding: 4px;
+    transition: color 0.2s;
+}
+
+.wi-group-drag-handle:hover {
+    color: var(--SmartThemeBodyColor, #ccc);
+}
+
+.wi-group-drag-handle:active {
+    cursor: grabbing;
+}
+
+/* 拖拽状态 */
+.wi-group-container.wi-dragging {
+    opacity: 0.5;
+}
+
+.wi-group-container.wi-drag-over {
+    outline: 2px dashed var(--SmartThemeQuoteColor, #666);
+    outline-offset: -2px;
+}
+
+/* 编辑弹窗样式 */
+.wi-group-edit-popup {
+    min-width: 400px;
+}
+
+.wi-group-edit-popup > div {
+    margin-bottom: 15px;
+}
+
+.wi-group-edit-popup label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--SmartThemeBodyColor, #ccc);
+    font-weight: 500;
+}
+
+.wi-group-edit-popup input[type="text"] {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--SmartThemeBorderColor, #444);
+    background: var(--SmartThemeBlurTintColor, #1a1a1a);
+    color: var(--SmartThemeBodyColor, #eee);
+    border-radius: 4px;
+}
+
+.wi-group-edit-popup .entry-selector {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid var(--SmartThemeBorderColor, #444);
+    border-radius: 4px;
+    background: var(--SmartThemeShadowColor, rgba(0,0,0,0.2));
+}
+
+.wi-group-edit-popup .entry-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 8px 10px;
+    gap: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--SmartThemeBorderColor, #333);
+    transition: background 0.15s;
+}
+
+.wi-group-edit-popup .entry-item:hover {
+    background: var(--SmartThemeShadowColor, rgba(0,0,0,0.3));
+}
+
+.wi-group-edit-popup .entry-item:last-child {
+    border-bottom: none;
+}
+
+.wi-group-edit-popup .entry-item input[type="checkbox"] {
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+.wi-group-edit-popup .entry-name {
+    flex: 1;
+    color: var(--SmartThemeBodyColor, #ddd);
+    word-break: break-word;
+}
+
+.wi-group-edit-popup .entry-keys {
+    color: var(--grey50, #777);
+    font-size: 11px;
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* 上下文菜单样式 */
+.wi-context-menu {
+    position: fixed;
+    min-width: 160px;
+    background: var(--SmartThemeBlurTintColor, #1a1a1a);
+    border: 1px solid var(--SmartThemeBorderColor, #444);
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    z-index: 10000;
+    padding: 4px;
+    animation: wiMenuFadeIn 0.15s ease;
+}
+
+@keyframes wiMenuFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.wi-context-menu-header {
+    padding: 6px 10px;
+    font-size: 11px;
+    color: var(--grey50, #888);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.wi-context-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.15s;
+    color: var(--SmartThemeBodyColor, #ddd);
+}
+
+.wi-context-menu-item:hover {
+    background: var(--SmartThemeShadowColor, rgba(255,255,255,0.1));
+}
+
+.wi-context-menu-item.remove {
+    color: #ef4444;
+}
+
+.wi-context-menu-item i {
+    width: 16px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.wi-context-menu-divider {
+    height: 1px;
+    background: var(--SmartThemeBorderColor, #444);
+    margin: 4px 0;
+}
+
+/* ==================== 移动端全局世界书选择器样式 ==================== */
+
+.wi-global-world-selector {
+    margin-top: 10px;
+    background: var(--SmartThemeBlurTintColor, #1a1a1a);
+    border: 1px solid var(--SmartThemeBorderColor, #444);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.wi-gws-header {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    cursor: pointer;
+    gap: 10px;
+}
+
+.wi-gws-label {
+    flex: 1;
+    color: var(--SmartThemeBodyColor, #ddd);
+}
+
+.wi-gws-count {
+    color: var(--grey50, #888);
+    font-size: 12px;
+}
+
+.wi-gws-arrow {
+    color: var(--grey50, #888);
+    transition: transform 0.2s;
+}
+
+.wi-gws-arrow.rotated {
+    transform: rotate(180deg);
+}
+
+.wi-gws-dropdown {
+    border-top: 1px solid var(--SmartThemeBorderColor, #444);
+}
+
+.wi-gws-search-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    border-bottom: 1px solid var(--SmartThemeBorderColor, #333);
+}
+
+.wi-gws-search-wrapper i {
+    color: var(--grey50, #888);
+}
+
+.wi-gws-search {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--SmartThemeBodyColor, #ddd);
+    font-size: 14px;
+    outline: none;
+}
+
+.wi-gws-list {
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.wi-gws-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    gap: 10px;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.wi-gws-item:hover {
+    background: var(--SmartThemeShadowColor, rgba(255,255,255,0.05));
+}
+
+.wi-gws-item.selected {
+    background: var(--SmartThemeShadowColor, rgba(59, 130, 246, 0.15));
+}
+
+.wi-gws-checkbox i {
+    color: var(--grey50, #666);
+    font-size: 16px;
+}
+
+.wi-gws-item.selected .wi-gws-checkbox i {
+    color: #3b82f6;
+}
+
+.wi-gws-item-name {
+    flex: 1;
+    color: var(--SmartThemeBodyColor, #ddd);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.wi-gws-empty {
+    padding: 20px;
+    text-align: center;
+    color: var(--grey50, #888);
+}
+
+.wi-gws-actions {
+    display: flex;
+    border-top: 1px solid var(--SmartThemeBorderColor, #333);
+}
+
+.wi-gws-btn {
+    flex: 1;
+    padding: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.15s;
+    color: var(--SmartThemeBodyColor, #ddd);
+}
+
+.wi-gws-btn:hover {
+    background: var(--SmartThemeShadowColor, rgba(255,255,255,0.05));
+}
+
+.wi-gws-btn:first-child {
+    border-right: 1px solid var(--SmartThemeBorderColor, #333);
+}
+
+.wi-gws-clear {
+    color: #ef4444;
+}
+
+.wi-gws-done {
+    color: #3b82f6;
+    font-weight: 500;
+}
+
+/* ==================== 移动端响应式适配 ==================== */
+
+@media (max-width: 768px) {
+    .wi-group-edit-popup {
+        min-width: 100%;
+    }
+    
+    .wi-group-edit-popup .entry-keys {
+        display: none;
+    }
+    
+    .wi-groups-toolbar {
+        justify-content: center;
+    }
+}

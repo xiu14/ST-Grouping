@@ -1,0 +1,13 @@
+{
+    "display_name": "ST-Grouping / 条目分组管理",
+    "loading_order": 10,
+    "requires": [],
+    "optional": [],
+    "dependencies": [],
+    "js": "index.js",
+    "css": "style.css",
+    "author": "SillyTavern User",
+    "version": "1.0.0",
+    "homePage": "",
+    "auto_update": false
+}
