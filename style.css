@@ -309,34 +309,51 @@
 
 /* ============================================ */
 /* 修复分组内条目的显示问题                      */
-/* 问题：主题shadow_color(黄色)覆盖在条目上      */
+/* 问题：主题shadow_color(米黄色)覆盖在条目上    */
+/* 解决：使用高优先级选择器强制覆盖              */
 /* ============================================ */
 
-/* 强制重置分组内条目的所有可能导致黄色遮罩的样式 */
-.wi-group-content .world_entry {
+/* 使用ID选择器提高优先级，强制覆盖主题样式 */
+#world_popup_entries_list .wi-group-content .world_entry,
+#WorldInfo .wi-group-content .world_entry,
+.wi-group-content .world_entry.world_entry {
     position: relative;
     z-index: 1;
     /* 强制覆盖主题的shadow_color影响 */
     box-shadow: none !important;
-    /* 使用深色背景 */
+    /* 使用深色背景 - 使用多种写法确保覆盖 */
     background-color: #282a2d !important;
     background: #282a2d !important;
+    background-image: none !important;
     /* 移除任何可能的滤镜或混合模式 */
     filter: none !important;
     mix-blend-mode: normal !important;
+    /* 确保不透明 */
+    opacity: 1 !important;
+}
+
+/* 条目hover状态 */
+#world_popup_entries_list .wi-group-content .world_entry:hover,
+#WorldInfo .wi-group-content .world_entry:hover {
+    background-color: #32343a !important;
+    background: #32343a !important;
 }
 
 /* 移除条目的伪元素（可能用于遮罩效果） */
-.wi-group-content .world_entry::before,
-.wi-group-content .world_entry::after {
+#world_popup_entries_list .wi-group-content .world_entry::before,
+#world_popup_entries_list .wi-group-content .world_entry::after,
+#WorldInfo .wi-group-content .world_entry::before,
+#WorldInfo .wi-group-content .world_entry::after {
     display: none !important;
     content: none !important;
     background: transparent !important;
     box-shadow: none !important;
+    opacity: 0 !important;
 }
 
 /* 修复分组内容区域 */
-.wi-group-content {
+#world_popup_entries_list .wi-group-content,
+#WorldInfo .wi-group-content {
     position: relative;
     z-index: 1;
     /* 确保分组内容区域没有黄色遮罩 */
@@ -344,20 +361,26 @@
     background: transparent !important;
 }
 
-.wi-group-content::before,
-.wi-group-content::after {
+#world_popup_entries_list .wi-group-content::before,
+#world_popup_entries_list .wi-group-content::after,
+#WorldInfo .wi-group-content::before,
+#WorldInfo .wi-group-content::after {
     display: none !important;
     background: transparent !important;
     box-shadow: none !important;
 }
 
 /* 确保分组容器也没有遮罩 */
-.wi-group-container {
+#world_popup_entries_list .wi-group-container,
+#WorldInfo .wi-group-container {
     box-shadow: none !important;
+    background: var(--SmartThemeShadowColor, rgba(0, 0, 0, 0.15)) !important;
 }
 
-.wi-group-container::before,
-.wi-group-container::after {
+#world_popup_entries_list .wi-group-container::before,
+#world_popup_entries_list .wi-group-container::after,
+#WorldInfo .wi-group-container::before,
+#WorldInfo .wi-group-container::after {
     display: none !important;
     background: transparent !important;
 }
