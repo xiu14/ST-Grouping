@@ -190,10 +190,16 @@
     padding: 6px 12px;
     cursor: pointer;
     font-size: 13px;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .wi-groups-toolbar .menu_button i {
     font-size: 14px;
+}
+
+.wi-groups-toolbar .menu_button span {
+    white-space: nowrap;
 }
 
 /* 分组容器 */
