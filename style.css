@@ -307,17 +307,13 @@
     border-left-color: #3b82f6;
 }
 
-#world_popup_entries_list .wi-group-content .world_entry.closedDrawer :is(.inline-drawer-icon, .drawer-icon),
-#world_popup_entries_list .wi-group-content .world_entry.closedDrawer .inline-drawer-toggle,
-#WorldInfo .wi-group-content .world_entry.closedDrawer :is(.inline-drawer-icon, .drawer-icon),
-#WorldInfo .wi-group-content .world_entry.closedDrawer .inline-drawer-toggle {
+#world_popup_entries_list .wi-group-content .world_entry[data-wi-entry-open="false"] :is(.inline-drawer-toggle, .inline-drawer-toggle i, .inline-drawer-icon, .inline-drawer-icon i, .drawer-icon, .drawer-icon i, .fa-circle-chevron-down, .fa-chevron-down, .fa-circle-caret-down),
+#WorldInfo .wi-group-content .world_entry[data-wi-entry-open="false"] :is(.inline-drawer-toggle, .inline-drawer-toggle i, .inline-drawer-icon, .inline-drawer-icon i, .drawer-icon, .drawer-icon i, .fa-circle-chevron-down, .fa-chevron-down, .fa-circle-caret-down) {
     color: var(--grey50, #888) !important;
 }
 
-#world_popup_entries_list .wi-group-content .world_entry.openDrawer :is(.inline-drawer-icon, .drawer-icon),
-#world_popup_entries_list .wi-group-content .world_entry.openDrawer .inline-drawer-toggle,
-#WorldInfo .wi-group-content .world_entry.openDrawer :is(.inline-drawer-icon, .drawer-icon),
-#WorldInfo .wi-group-content .world_entry.openDrawer .inline-drawer-toggle {
+#world_popup_entries_list .wi-group-content .world_entry[data-wi-entry-open="true"] :is(.inline-drawer-toggle, .inline-drawer-toggle i, .inline-drawer-icon, .inline-drawer-icon i, .drawer-icon, .drawer-icon i, .fa-circle-chevron-down, .fa-chevron-down, .fa-circle-caret-down),
+#WorldInfo .wi-group-content .world_entry[data-wi-entry-open="true"] :is(.inline-drawer-toggle, .inline-drawer-toggle i, .inline-drawer-icon, .inline-drawer-icon i, .drawer-icon, .drawer-icon i, .fa-circle-chevron-down, .fa-chevron-down, .fa-circle-caret-down) {
     color: #f59e0b !important;
 }
 
