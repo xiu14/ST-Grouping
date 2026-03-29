@@ -307,6 +307,20 @@
     border-left-color: #3b82f6;
 }
 
+#world_popup_entries_list .wi-group-content .world_entry.closedDrawer :is(.inline-drawer-icon, .drawer-icon),
+#world_popup_entries_list .wi-group-content .world_entry.closedDrawer .inline-drawer-toggle,
+#WorldInfo .wi-group-content .world_entry.closedDrawer :is(.inline-drawer-icon, .drawer-icon),
+#WorldInfo .wi-group-content .world_entry.closedDrawer .inline-drawer-toggle {
+    color: var(--grey50, #888) !important;
+}
+
+#world_popup_entries_list .wi-group-content .world_entry.openDrawer :is(.inline-drawer-icon, .drawer-icon),
+#world_popup_entries_list .wi-group-content .world_entry.openDrawer .inline-drawer-toggle,
+#WorldInfo .wi-group-content .world_entry.openDrawer :is(.inline-drawer-icon, .drawer-icon),
+#WorldInfo .wi-group-content .world_entry.openDrawer .inline-drawer-toggle {
+    color: #f59e0b !important;
+}
+
 /* ============================================ */
 /* 修复分组内条目的显示问题                      */
 /* 问题：主题shadow_color(米黄色)覆盖在条目上    */
@@ -760,5 +774,53 @@
     /* 隐藏全局世界书的原生select2选择器 */
     #WIMultiSelector .range-block-range {
         display: none !important;
+    }
+
+    /* 强制限制全局世界书选择器宽度 */
+    #WIMultiSelector {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+        box-sizing: border-box !important;
+    }
+
+    #wi-global-world-selector {
+        max-width: 100% !important;
+        width: calc(100% - 20px) !important;
+        margin: 10px auto !important;
+        overflow-x: hidden !important;
+        box-sizing: border-box !important;
+    }
+
+    .wi-gws-dropdown {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    .wi-gws-list {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    .wi-gws-item {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    .wi-gws-item-name {
+        max-width: calc(100% - 50px) !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+    }
+
+    /* 修复父容器 */
+    #WorldInfo {
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+    }
+
+    #world_popup {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
     }
 }
