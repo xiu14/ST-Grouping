@@ -506,6 +506,10 @@
 }
 
 /* 未分组标题 */
+.wi-ungrouped-container {
+    margin-top: 10px;
+}
+
 .wi-ungrouped-header {
     display: flex;
     align-items: center;
@@ -519,6 +523,14 @@
 
 .wi-ungrouped-header.is-mismatch {
     color: var(--warning, #e5a24b);
+}
+
+.wi-ungrouped-content {
+    padding: 4px 0 0;
+}
+
+.wi-ungrouped-content > .world_entry {
+    margin: 4px 0;
 }
 
 /* 拖拽把手 */
