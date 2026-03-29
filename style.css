@@ -622,6 +622,10 @@
 .wi-context-menu {
     position: fixed;
     min-width: 160px;
+    max-width: min(280px, calc(100vw - 24px));
+    max-height: calc(100vh - 24px);
+    overflow-y: auto;
+    overflow-x: hidden;
     background: var(--SmartThemeBlurTintColor, #1a1a1a);
     border: 1px solid var(--SmartThemeBorderColor, #444);
     border-radius: 6px;
