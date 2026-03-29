@@ -283,6 +283,65 @@
     font-size: 12px;
 }
 
+.wi-subgroup-container {
+    margin: 8px 0 6px 12px;
+    border-left: 2px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0 6px 6px 0;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.wi-subgroup-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    cursor: pointer;
+    user-select: none;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.wi-subgroup-header:hover {
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.wi-subgroup-header .expand-icon {
+    transition: transform 0.2s;
+    color: var(--grey50, #888);
+    font-size: 11px;
+}
+
+.wi-subgroup-header.collapsed .expand-icon {
+    transform: rotate(-90deg);
+}
+
+.wi-subgroup-name {
+    flex: 1;
+    color: var(--SmartThemeBodyColor, #ddd);
+    font-size: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.wi-subgroup-count {
+    color: var(--grey50, #888);
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+.wi-subgroup-content {
+    padding: 4px 0 4px 8px;
+}
+
+.wi-subgroup-content.collapsed {
+    display: none;
+}
+
+.wi-subgroup-content > .world_entry {
+    margin: 4px 0;
+}
+
 /* 分组内容区域 */
 .wi-group-content {
     padding: 5px;
@@ -612,6 +671,11 @@
     width: 16px;
     text-align: center;
     font-size: 13px;
+}
+
+.wi-context-menu-item.wi-context-subitem {
+    padding-left: 24px;
+    color: var(--grey20, #cfcfcf);
 }
 
 .wi-context-menu-divider {
