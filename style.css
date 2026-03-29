@@ -202,6 +202,17 @@
     white-space: nowrap;
 }
 
+.wi-groups-pagination-warning {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 6px;
+    background: color-mix(in srgb, var(--warning, #e5a24b) 14%, transparent);
+    border: 1px solid color-mix(in srgb, var(--warning, #e5a24b) 40%, transparent);
+    color: var(--warning, #e5a24b);
+    font-size: 12px;
+    line-height: 1.4;
+}
+
 /* 分组容器 */
 .wi-group-container {
     margin-bottom: 8px;
