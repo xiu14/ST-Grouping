@@ -517,6 +517,10 @@
     border-top: 1px dashed var(--SmartThemeBorderColor, #444);
 }
 
+.wi-ungrouped-header.is-mismatch {
+    color: var(--warning, #e5a24b);
+}
+
 /* 拖拽把手 */
 .wi-group-drag-handle {
     cursor: grab;
