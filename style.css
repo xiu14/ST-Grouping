@@ -202,6 +202,28 @@
     white-space: nowrap;
 }
 
+.wi-debug-popup {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: min(980px, 96vw);
+}
+
+.wi-debug-popup-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.wi-debug-popup #wi-debug-output {
+    width: 100%;
+    min-height: min(70vh, 640px);
+    resize: vertical;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    line-height: 1.45;
+    white-space: pre;
+}
+
 .wi-groups-pagination-warning {
     width: 100%;
     padding: 8px 10px;
