@@ -7,7 +7,7 @@
  */
 
 import { initPromptEntryGrouping, destroyPromptEntryGrouping } from './lib/prompt-entry-grouping-ui.js';
-import { initWorldInfoGrouping } from './lib/worldinfo-grouping.js';
+import { initWorldInfoGrouping, destroyWorldInfoGrouping } from './lib/worldinfo-grouping.js';
 
 // 扩展名称
 const extensionName = 'ST-Grouping';
@@ -34,5 +34,6 @@ jQuery(async () => {
 // 导出销毁函数供外部调用
 window.destroySTGrouping = () => {
     destroyPromptEntryGrouping();
+    destroyWorldInfoGrouping();
     console.log(`[${extensionName}] 已销毁`);
 };
