@@ -973,6 +973,58 @@
     white-space: nowrap;
 }
 
+.wi-gws-selected-books {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 8px 10px 10px;
+    border-top: 1px solid var(--SmartThemeBorderColor, #333);
+}
+
+.wi-gws-selected-books:empty {
+    display: none;
+}
+
+.wi-gws-selected-book {
+    display: inline-flex;
+    align-items: center;
+    max-width: 100%;
+    min-width: 0;
+    gap: 6px;
+    padding: 6px 8px;
+    box-sizing: border-box;
+    cursor: pointer;
+    color: var(--SmartThemeBodyColor, #ddd);
+    background: var(--SmartThemeBlurTintColor, rgba(255, 255, 255, 0.04));
+    border: 1px solid var(--SmartThemeBorderColor, #444);
+    border-radius: 6px;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.wi-gws-selected-book:hover,
+.wi-gws-selected-book:focus-visible {
+    background: var(--SmartThemeShadowColor, rgba(255, 255, 255, 0.08));
+    border-color: var(--SmartThemeQuoteColor, #3b82f6);
+    outline: none;
+}
+
+.wi-gws-selected-book.active {
+    border-color: var(--SmartThemeQuoteColor, #3b82f6);
+}
+
+.wi-gws-selected-book-icon {
+    flex: 0 0 auto;
+    color: var(--SmartThemeQuoteColor, #3b82f6);
+    font-size: 13px;
+}
+
+.wi-gws-selected-book-name {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 .wi-gws-empty {
     padding: 20px;
     text-align: center;
@@ -1102,6 +1154,16 @@
         overflow: hidden !important;
         text-overflow: ellipsis !important;
         white-space: nowrap !important;
+    }
+
+    .wi-gws-selected-books {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+        box-sizing: border-box !important;
+    }
+
+    .wi-gws-selected-book {
+        max-width: 100% !important;
     }
 
     /* 修复父容器 */
