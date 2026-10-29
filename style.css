@@ -272,6 +272,7 @@
 
 .wi-group-header .wi-group-name {
     flex: 1;
+    min-width: 0;
     font-weight: 500;
     color: var(--SmartThemeBodyColor, #eee);
     overflow: hidden;
